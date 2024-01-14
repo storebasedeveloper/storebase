@@ -1,0 +1,8 @@
+20240113	17:16:41	77a1e703-82a3-4890-a515-b2031fbc1fe2	Error: No recipients defined
+20240113	17:17:25	e4f470ab-35d5-49c8-b40f-7a0a90280815	Error: No recipients defined
+20240113	17:17:29	ac1a34b1-2e02-47ea-9105-c393dd9d8879	Error: No recipients defined
+20240113	17:40:18	a41baa42-017f-4a8a-8bde-6896a24a5d52	Error: getaddrinfo ENOTFOUND smtp-relay.brevo.com
+20240113	17:41:44	a875dfd3-93ed-442c-9aeb-5a96eeebfcbb	Error: getaddrinfo ENOTFOUND smtp-relay.brevo.com
+20240113	17:42:27	8fb8fa75-c3eb-4a35-85e0-b93ee1dd81d5	Error: getaddrinfo ENOTFOUND smtp-relay.brevo.com
+20240113	17:44:51	24fc62aa-7c54-4ca2-93fa-9c3d2e21fdd7	Error: getaddrinfo ENOTFOUND smtp-relay.brevo.com
+20240113	17:45:17	0454877a-2162-4ec5-a580-ae396f5dd911	Error: getaddrinfo ENOTFOUND smtp-relay.brevo.com

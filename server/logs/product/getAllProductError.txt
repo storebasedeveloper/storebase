@@ -1,0 +1,13 @@
+20240112	20:02:11	bdf37cf9-f949-42c9-a73f-98b74d0c85be	ReferenceError:Limiting is not defined
+20240112	20:03:14	14b01ecd-a981-4830-83fb-cc7ae83b61c2	ReferenceError:fields is not defined
+20240112	20:04:06	94bb86bc-c574-4bf3-b881-ae8a5e8c3c3b	ReferenceError:ReferenceError: fields is not defined
+    at getAllProduct (C:\Users\USER\desktop\Projects\genzshop\server\controllers\productCtrl.js:73:26)
+    at Layer.handle [as handle_request] (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\USER\desktop\Projects\genzshop\server\node_modules\express\lib\router\index.js:47:12)
