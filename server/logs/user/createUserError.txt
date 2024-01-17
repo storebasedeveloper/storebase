@@ -1,1 +1,2 @@
 20240112	14:23:09	5b73738b-8171-45b4-be6b-4b5dc883e663	MongoServerError: E11000 duplicate key error collection: genzshop.users index: mobile_1 dup key: { mobile: "1234567890" }
+20240115	15:05:23	953cf33f-35bc-4071-a5cc-eceb49ccb814	MongoServerError: E11000 duplicate key error collection: genzshop.users index: mobile_1 dup key: { mobile: "08149787227579988" }

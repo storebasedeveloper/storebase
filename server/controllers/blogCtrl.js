@@ -27,7 +27,7 @@ const updateBlog = async (req, res) => {
         validateMongoDbId(id)
         try{
      await Blog.findByIdAndUpdate(id,{ $inc : {numViews : 1}}, {new : true});
-     const getBlog = await Blog.findById(id);
+     const getBlog = await Blog.findById(id).populate("likes").populate("dislikes");
      res.status(200).json(getBlog)
         }catch(error){
             logEvents(`${error.name}:${error.message}`, "getBlogError.txt", "blog")
@@ -51,7 +51,7 @@ const updateBlog = async (req, res) => {
                     logEvents(`${error.name}:${error.message}`, "deletedBlogError.txt", "blog")
                 }
                 }
-const likeBlog = async(req, res) => {
+const likeBlog = async (req, res) => {
 const { blogId } = req.body;
 console.log(blogId)
 validateMongoDbId(blogId);
@@ -68,22 +68,22 @@ const alreadyDisliked = blog?.dislikes?.find((( userId ) => userId?.toString() =
 if(alreadyDisliked){
 const blog =  await Blog.findByIdAndUpdate(blogId, {
     $pull : { dislikes : loginUserId},
-    isDisliked : false
+    isDisliked : false,
 }, { new : true})
-res.json(blog)
+return res.json(blog)
 }
 if(isLiked){
     const blog =  await Blog.findByIdAndUpdate(blogId, {
         $pull : { likes : loginUserId},
         isLiked : false
     }, { new : true})
-    res.json(blog)
+   return res.json(blog)
 }else{
     const blog =  await Blog.findByIdAndUpdate(blogId, {
         $push : { likes : loginUserId},
         isLiked : true
     }, { new : true})
-    res.json(blog)
+  return  res.json(blog)
 }
 }catch(error){
     logEvents(`${error.name}:${error.message}`, "likeBlogError.txt", "blog")
@@ -99,7 +99,7 @@ if(isLiked){
                     //Find the login user
                     const loginUserId = req?.user?._id;
                     //find if the user has disliked the post
-                    const isDisLiked = blog?.isDisLiked; //returns true or false
+                    const isDisLiked = blog?.isDisliked; //returns true or false
                     console.log(isDisLiked)
                     //find if the user has liked the post
                     const alreadyLiked = blog?.likes?.find((( userId ) => userId?.toString() === loginUserId?.toString()));
@@ -108,20 +108,20 @@ if(isLiked){
                         $pull : { likes : loginUserId},
                         isLiked : false
                     }, { new : true})
-                    res.json(blog)
+                   return res.json(blog)
                     }
                     if(isDisLiked){
                         const blog =  await Blog.findByIdAndUpdate(blogId, {
                             $pull : { dislikes : loginUserId},
                             isDisliked : false
                         }, { new : true})
-                        res.json(blog)
+                      return  res.json(blog)
                     }else{
                         const blog =  await Blog.findByIdAndUpdate(blogId, {
                             $push : { dislikes : loginUserId},
                             isDisliked : true
                         }, { new : true})
-                        res.json(blog)
+                      return  res.json(blog)
                     }
                     }catch(error){
                         logEvents(`${error.name}:${error.message}`, "dislikeBlogError.txt", "blog")

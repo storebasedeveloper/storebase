@@ -1,0 +1,11 @@
+const express = require("express")
+const path = require("path")
+const router = express.Router()
+const { isAdmin, authMiddleware } = require(path.join(__dirname, "..", "middlewares", "authMiddleware.js"))
+const { createBrand, updateBrand, deleteBrand, getBrand, getAllBrand } = require(path.join(__dirname, "..", "controllers", "brandCtrl.js"))
+router.post("/", authMiddleware, isAdmin, createBrand)
+router.put("/:id", authMiddleware, isAdmin, updateBrand)
+router.delete("/:id", authMiddleware, isAdmin, deleteBrand)
+router.get("/:id", getBrand)
+router.get("/", getAllBrand)
+module.exports = router
